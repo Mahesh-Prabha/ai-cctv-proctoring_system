@@ -28,21 +28,20 @@ This project is designed for a **Split Deployment**:
 ### **B. Backend (Docker / VPS)**
 The backend is memory and CPU intensive. You should deploy it on a server with at least 4GB of RAM.
 
-#### **Option 1: Using Docker (Recommended)**
-1.  Install Docker on your server.
-2.  Build the image:
-    ```bash
-    cd cctv_portal/backend
-    docker build -t cctv-backend .
-    ```
-3.  Run the container:
-    ```bash
-    docker run -d -p 8000:8000 \
-      -e SUPABASE_URL="your_url" \
-      -e SUPABASE_SERVICE_ROLE_KEY="your_key" \
-      -e GEMINI_API_KEY="your_key" \
-      cctv-backend
-    ```
+#### **Option 1: Using Render (Recommended)**
+1.  Log in to [Render.com](https://render.com).
+2.  Click **"New +"** -> **"Web Service"**.
+3.  Connect your GitHub repository.
+4.  **Service Type**: Select **"Docker"**.
+5.  **Project Settings**:
+    *   **Root Directory**: `cctv_portal/backend` (This is very important).
+    *   **Instance Type**: Choose a plan with at least **4GB RAM** (Starter or above).
+6.  **Environment Variables**: Add the following:
+    *   `SUPABASE_URL`
+    *   `SUPABASE_SERVICE_ROLE_KEY`
+    *   `GEMINI_API_KEY`
+    *   `PORT`: `8000`
+7.  Click **"Create Web Service"**. Render will build the image and start the AI server.
 
 #### **Option 2: Direct Setup (Ubuntu/Windows)**
 1.  Ensure Python 3.11 and FFmpeg are installed.
