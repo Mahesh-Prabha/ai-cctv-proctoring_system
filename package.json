@@ -6,8 +6,6 @@
         "cctv_portal/frontend"
     ],
     "scripts": {
-        "build": "npm run build -w cctv_portal/frontend",
-        "install": "npm install -w cctv_portal/frontend",
-        "start": "npm run start -w cctv_portal/frontend"
+        "build": "npm run build --workspace=cctv_portal/frontend"
     }
 }
