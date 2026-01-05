@@ -1,0 +1,36 @@
+# Virtual Environments
+porvenv/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+venv_cctv//
+
+# Node.js
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Logs and Evidence
+portal_evidence/
+temp_evidence/
+evidence_output/
+*.log
+
+# Sensitive Info / Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
